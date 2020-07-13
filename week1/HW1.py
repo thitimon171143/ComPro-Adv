@@ -83,5 +83,5 @@ class StudentGPA:
     def __str__(self):
         return 'Name : {} , GPA : {}'.format(self.name,self.sumGPA())
 gpa_grade = StudentGPA('Fast','C+',3,'D+',1,'B',3,'C',3)
-print(gpa_grade.name,gpa_grade.sumGPA())
+#print(gpa_grade.name,gpa_grade.sumGPA())
 print(gpa_grade)
