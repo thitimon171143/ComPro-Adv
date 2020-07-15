@@ -2,7 +2,7 @@ import psycopg2
 def updateEmail(name,new_e_mail):
     try:
         connection = psycopg2.connect(user="postgres",
-                                    password="pynative@#29",
+                                    password="thitimon",
                                     host="127.0.0.1",
                                     port="5432",
                                     database="mydb")
@@ -29,4 +29,4 @@ def updateEmail(name,new_e_mail):
             cursor.close()
             connection.close()
             print("PostgreSQL connection is closed")
-updateEmail('Anirach','Anirach@ieee.org')
+updateEmail('C','new@gmail.com')

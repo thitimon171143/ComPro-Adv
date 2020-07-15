@@ -7,21 +7,17 @@ try:
                                     port="5432",
                                     database="mydb")
     cursor = connection.cursor()
-    postgres_insert_query = """ INSERT INTO students (student_id,f_name,l_name,e_mail) VALUES (%s,%s,%s,%s)"""
-    #record_to_insert = ('6206022610076','Thitimon','Oatthathamsunthon','6206022610076@fitm.kmutnb.ac.th')
-    #cursor.execute(postgres_insert_query,record_to_insert)
-    record_to_insert = ('1','A','A','X')
+    postgres_insert_query = """ INSERT INTO teachers (teacher_id,f_name,l_name,e_mail) VALUES (%s,%s,%s,%s)"""
+    record_to_insert = ('123','K','K','KKK@gmail.com')
     cursor.execute(postgres_insert_query,record_to_insert)
-    record_to_insert = ('2','B','B','Y')
-    cursor.execute(postgres_insert_query,record_to_insert)
-    record_to_insert = ('3','C','C','Z')
+    record_to_insert = ('678','M','M','MMM@gmail.com')
     cursor.execute(postgres_insert_query,record_to_insert)
     connection.commit()
     count = cursor.rowcount
-    print(count,"Record inserted successfully into students table")
+    print(count,"Record inserted successfully into teachers table")
 except (Exception,psycopg2.Error) as error:
     if(connection):
-        print("Failed to insert record into student table",error)
+        print("Failed to insert record into teachers table",error)
 finally:
     if(connection):
         cursor.close()

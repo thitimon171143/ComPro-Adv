@@ -2,7 +2,7 @@ import psycopg2
 def getStudentDetails(name):
     try:
         connection = psycopg2.connect(user="postgres",
-                                    password="pynative@#29",
+                                    password="thitimon",
                                     host="127.0.0.1",
                                     port="5432",
                                     database="mydb")
@@ -24,5 +24,5 @@ def getStudentDetails(name):
             cursor.close()
             connection.close()
             print("PostgreSQL connection is closed")
-getStudentDetails('Anirach')
-getStudentDetails('Beesuda')
+getStudentDetails('A')
+getStudentDetails('B')

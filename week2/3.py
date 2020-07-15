@@ -2,7 +2,7 @@ import psycopg2
 from psycopg2 import Error
 try:
     connection = psycopg2.connect(user="postgres",
-                                    password="pynative@#29",
+                                    password="thitimon",
                                     #password="Anirach",
                                     host="127.0.0.1",
                                     port="5432",

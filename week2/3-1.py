@@ -1,16 +1,21 @@
 import psycopg2
+from psycopg2 import Error
 try:
     connection = psycopg2.connect(user="postgres",
                                     password="thitimon",
                                     #password="Anirach",
                                     host="127.0.0.1",
                                     port="5432",
-                                    database="postgres")
-    connection.autocommit = True
+                                    database="mydb")
     cursor = connection.cursor()
-    sql = '''CREATE database mydb'''
-    cursor.execute(sql)
-    print("Database created successfully........")
+    create_table_query = '''CREATE TABLE Teachers
+        (teacher_id     CHAR(3)    PRIMARY KEY,
+        f_name         VARCHAR(30) NOT NULL,
+        l_name         VARCHAR(30) NOT NULL,
+        e_mail         VARCHAR(50) ); '''
+    cursor.execute(create_table_query)
+    connection.commit()
+    print("Table created successfully in PostgreSQL")
 except (Exception,psycopg2.Error) as error:
     print("Error while connecting to PostgreSQL",error)
 finally:
