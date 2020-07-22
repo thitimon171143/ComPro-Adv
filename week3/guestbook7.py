@@ -2,21 +2,22 @@ from flask import Flask,render_template,request,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column,Integer,String,Date
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:SPYatb32373@node1247-rachpython.th.app.ruk-com.cloud:11001/testdb'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:OEIknz76159@node1438-thitimon.app.ruk-com.cloud:11023/testdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 class Comments(db.Model):
     __tablename__ = 'comments'
     id = Column(Integer,primary_key=True)
     name = Column(String)
-    comments = Column(String)
+    comment = Column(String)
+    
 @app.route('/')
 def index():
     result = Comments.query.all()
-    return render_template('index7.html',result=result)
+    return render_template('index2.html',result=result)
 @app.route('/sign')
 def sign():
-    return render_template('sign7.html')
+    return render_template('sign1.html')
 @app.route('/process',methods=['POST'])
 def process():
     name = request.form['name']

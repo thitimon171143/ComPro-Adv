@@ -1,9 +1,9 @@
 import psycopg2
 try:
     connection = psycopg2.connect(user="webadmin",
-                                    password="SPYatb32373",
-                                    host="node1247-rachpython.th.app.ruk-com.cloud",
-                                    port="11001",
+                                    password="OEIknz76159",
+                                    host="node1438-thitimon.app.ruk-com.cloud",
+                                    port="11023",
                                     database="postgres")
     connection.autocommit = True
     cursor = connection.cursor()
