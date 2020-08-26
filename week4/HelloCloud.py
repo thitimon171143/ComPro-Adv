@@ -3,7 +3,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return '<h1>Hello RUN-COM!</h1>'
-@app.route('/home',method=['GET','POST'])
+@app.route('/home',methods=['GET','POST'])
 def home():
     links = ['https://ruk-com.in.th',
             'https://www.google.com',
