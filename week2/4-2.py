@@ -8,9 +8,9 @@ try:
                                     database="mydb")
     cursor = connection.cursor()
     postgres_insert_query = """ INSERT INTO teachers (teacher_id,f_name,l_name,e_mail) VALUES (%s,%s,%s,%s)"""
-    record_to_insert = ('123','K','K','KKK@gmail.com')
+    record_to_insert = ('AMK','K','K','KKK@gmail.com')
     cursor.execute(postgres_insert_query,record_to_insert)
-    record_to_insert = ('678','M','M','MMM@gmail.com')
+    record_to_insert = ('KNM','M','M','MMM@gmail.com')
     cursor.execute(postgres_insert_query,record_to_insert)
     connection.commit()
     count = cursor.rowcount

@@ -8,14 +8,14 @@ try:
                                     database="mydb")
     cursor = connection.cursor()
     postgres_insert_query = """ INSERT INTO students (student_id,f_name,l_name,e_mail) VALUES (%s,%s,%s,%s)"""
-    #record_to_insert = ('6206022610076','Thitimon','Oatthathamsunthon','6206022610076@fitm.kmutnb.ac.th')
-    #cursor.execute(postgres_insert_query,record_to_insert)
-    record_to_insert = ('1','A','A','X')
+    record_to_insert = ('62060226','Thitimon','Oatthathamsunthon','6206022610076@fitm.kmutnb.ac.th')
+    cursor.execute(postgres_insert_query,record_to_insert)
+    '''record_to_insert = ('1','A','A','X')
     cursor.execute(postgres_insert_query,record_to_insert)
     record_to_insert = ('2','B','B','Y')
     cursor.execute(postgres_insert_query,record_to_insert)
     record_to_insert = ('3','C','C','Z')
-    cursor.execute(postgres_insert_query,record_to_insert)
+    cursor.execute(postgres_insert_query,record_to_insert)'''
     connection.commit()
     count = cursor.rowcount
     print(count,"Record inserted successfully into students table")
