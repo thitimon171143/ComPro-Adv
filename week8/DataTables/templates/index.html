@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            href="http://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGs03+Hhxv8T/Q5PaZtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="http://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity = "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div style="padding: 100px">
+            <h1>DataTables serverSide SqlAlchemy</h1>
+            <table id = "sql-table" class="table">
+                <thead class ="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phones</th>
+                        <th>ฺBirthday</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </body>
+    <!--DataTable Pagination-->
+    <link
+        rel = "stylesheet"
+        type= "text/css"
+        href= "https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datables.min.css"
+    />
+    <script
+        type = "text/javascript"
+        src = "https://cdn.datatavles.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.js"
+    ></script>
+</html>
+
+<script>
+    $(document.ready(function () {
+        var sqltable = $('#sql-table').DataTable({
+            serverSide: true,
+            deferRender: true,
+            ajax: 'load_table_sql',
+        });
+    });
+</script>
