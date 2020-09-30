@@ -21,11 +21,11 @@ def consumer(pipeline,event):
         logging.info(
             "Consumer storing message: %s (queue size=%s)",
             message,
-            pipeline.qzize(),
+            pipeline.qsize(),
         )
     logging.info("Consumer received EXIT event.Exiting")
 
-class Pipeline(queue,Queue):
+class Pipeline(queue.Queue):
     def __init__(self):
         super().__init__(maxsize=10)
 
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     format = "%(asctime)s: %(message)s"
     logging.basicConfig(format=format,level=logging.INFO,
                         datefmt="%H:%M:%S")
-    #logging.getLogger().setLevel(logging.DEBUG)
+    logging.getLogger().setLevel(logging.DEBUG)
 
     pipeline = Pipeline()
     event = threading.Event()
@@ -52,6 +52,6 @@ if __name__ == "__main__":
         executor.submit(producer,pipeline,event)
         executor.submit(consumer,pipeline,event)
 
-        time.sleep(0.1)
+        time.sleep(0.000000001)
         logging.info("Main: about to set event")
         event.set()
